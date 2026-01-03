@@ -80,14 +80,21 @@ const Navbar = () => {
               </HStack>
             </MenuTrigger>
             <MenuContent>
-              <MenuItem value="logout" onClick={handleLogout}>
+              <MenuItem value="logout" onClick={handleLogout} p={2} cursor={"pointer"}>
                 <Box as={FiLogOut} mr={2} />
                 Sign Out
               </MenuItem>
             </MenuContent>
           </MenuRoot>
         ) : (
-          <Button colorScheme="brand" variant={"surface"} onClick={handleLogin}>
+          <Button
+            colorScheme="brand"
+            variant={"solid"}
+            bg="brand.500"
+            _hover={{ bg: 'brand.600' }}
+            onClick={handleLogin}
+            color="button.text"
+            >
             Sign In
           </Button>
         )}

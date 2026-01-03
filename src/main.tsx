@@ -9,7 +9,7 @@ import App from './App.tsx';
 const system = createSystem(defaultConfig, {
   globalCss: {
     body: {
-      bg: 'gray.50',
+      bg: 'white',
     },
   },
   theme: {
@@ -29,6 +29,16 @@ const system = createSystem(defaultConfig, {
         },
       },
     },
+    semanticTokens: {
+      colors: {
+        'button.text': {
+          value: {
+            _light: 'white',
+            _dark: 'white',
+          },
+        },
+      },
+    },
   },
 });
 
@@ -44,9 +54,11 @@ createRoot(document.getElementById('root')!).render(
       domain={auth0Domain}
       clientId={auth0ClientId}
       authorizationParams={{
-        redirect_uri: window.location.origin,
+        redirect_uri: globalThis.location.origin,
         audience: auth0Audience,
       }}
+      cacheLocation="localstorage"
+      useRefreshTokens={true}
     >
       <ChakraProvider value={system}>
         <App />

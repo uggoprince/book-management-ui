@@ -32,7 +32,7 @@ const LoginPage = () => {
   };
 
   return (
-    <Container maxW="container.md" py={20}>
+    <Container maxW="100vw" py={10} h="fit-content" minH={"100vh"}>
       <VStack gap={8} textAlign="center">
         {/* Hero Icon */}
         <Icon as={FiBook} boxSize={20} color="brand.500" />
@@ -53,10 +53,12 @@ const LoginPage = () => {
           <VStack gap={4}>
             <Button
               size="lg"
-              colorScheme="brand"
               onClick={handleSignIn}
               w="200px"
-              variant={"surface"}
+              variant="solid"
+              bg="brand.500"
+              color="button.text"
+              _hover={{ bg: 'brand.600' }}
             >
               <HStack gap={2}>
                 <Box as={FiLogIn} />
@@ -65,10 +67,12 @@ const LoginPage = () => {
             </Button>
             <Button
               size="lg"
-              variant="outline"
-              colorScheme="brand"
+              variant="solid"
               onClick={handleSignUp}
               w="200px"
+              bg="brand.500"
+              color="button.text"
+              _hover={{ bg: 'brand.600' }}
             >
               <HStack gap={2}>
                 <Box as={FiUserPlus} />
